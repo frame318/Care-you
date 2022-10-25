@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>close..</title>{% endblock %}
+
+{% block content %}
+
+<div class="d-flex align-items-center mt-5">
+  <strong>Loading...</strong>
+  <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+</div>
+
+<script>
+  async function main() {
+    liff.ready.then(() => {
+      if (liff.isLoggedIn()) {
+        liff.closeWindow()
+      } else {
+        liff.login()
+      }
+    })
+    await liff.init({ liffId: "1654982439-PGQy8pvw" })
+  }
+  main()
+</script>
+{% endblock %}

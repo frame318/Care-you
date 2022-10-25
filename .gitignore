@@ -1,0 +1,11 @@
+venv
+db.sqlite3
+__pycache__
+__pycache__/
+*.py[cod]
+line/__pycache__/question.cpython-39.pyc
+*.pyc
+*.pyc
+*.pyc
+*.pyc
+desktop.ini

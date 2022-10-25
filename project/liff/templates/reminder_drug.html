@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}<title>เตือนการกินยา</title>{% endblock %}
+
+{% block content %}
+<img src="https://res.cloudinary.com/dzldekasa/image/upload/v1630752530/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5/1_paa4dm.jpg" class="img-fluid" alt="Responsive image">
+<form action="{% url 'reminderdrug' %}" method="post">
+  {% csrf_token %}
+
+    {{ form.user_id|as_crispy_field }}
+    {{ form.time_drug|as_crispy_field }}
+    {{ form.reminders_user|as_crispy_field }}
+
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-primary mt-3 mb-2">บันทึก</button>
+    </div>
+</form>
+
+
+{% endblock %}
