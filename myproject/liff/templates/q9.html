@@ -1,0 +1,390 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>แบบประเมินโรคซึมเศร้า 9 คำถาม(9Q)</title>{% endblock %}
+
+{% block content %}
+<img src="https://res.cloudinary.com/dzldekasa/image/upload/v1630752530/%E0%B8%A3%E0%B8%B9%E0%B8%9B%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5/1_paa4dm.jpg" class="img-fluid" alt="Responsive image">
+<form id = "myForm" action="{% url 'q9' %}" method="post">
+  {% csrf_token %}
+  <input id="userId" type="hidden" name="userId" value="">
+  <br>
+  <i>ในช่วง 2 สัปดาห์ทีผ่านมามารวมทั้งวันนี้ท่านมีอาการเหล่านี้ บ่อยแค่ไหน</i>
+  <div class="card mt-3 mb-3">
+    <div class="card-header">
+      <b>1. เบื่อ ไม่สนใจอยากทำอะไร</b>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" id="flexRadioDefault1-1" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 1');" required>
+          <label class="form-check-label" for="flexRadioDefault1-1">
+            ไม่มีเลย
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" id="flexRadioDefault1-2" value="1">
+          <label class="form-check-label" for="flexRadioDefault1-2">
+            เป็นบางวัน (1-7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" id="flexRadioDefault1-3" value="2">
+          <label class="form-check-label" for="flexRadioDefault1-3">
+            เป็นบ่อย (มากกว่า 7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q1" id="flexRadioDefault1-4" value="3">
+          <label class="form-check-label" for="flexRadioDefault1-4">
+            เป็นทุกวัน
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card mt-3 mb-3">
+    <div class="card-header">
+      <b>2. ไม่สบายใจ ซึมเศร้า ท้อแท้</b>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" id="flexRadioDefault2-1" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 2');" required>
+          <label class="form-check-label" for="flexRadioDefault2-1">
+            ไม่มีเลย
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" id="flexRadioDefault2-2" value="1">
+          <label class="form-check-label" for="flexRadioDefault2-2">
+            เป็นบางวัน (1-7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" id="flexRadioDefault2-3" value="2">
+          <label class="form-check-label" for="flexRadioDefault2-3">
+            เป็นบ่อย (มากกว่า 7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q2" id="flexRadioDefault2-4" value="3">
+          <label class="form-check-label" for="flexRadioDefault2-4">
+            เป็นทุกวัน
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card mt-3 mb-3">
+    <div class="card-header">
+      <b>3. หลับยากหรือหลับๆตื่นๆหรือหลับมากไป</b>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" id="flexRadioDefault3-1" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 3');" required>
+          <label class="form-check-label" for="flexRadioDefault3-1">
+            ไม่มีเลย
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" id="flexRadioDefault3-2" value="1">
+          <label class="form-check-label" for="flexRadioDefault3-2">
+            เป็นบางวัน (1-7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" id="flexRadioDefault3-3" value="2">
+          <label class="form-check-label" for="flexRadioDefault3-3">
+            เป็นบ่อย (มากกว่า 7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q3" id="flexRadioDefault3-4" value="3">
+          <label class="form-check-label" for="flexRadioDefault3-4">
+            เป็นทุกวัน
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card mt-3 mb-3">
+    <div class="card-header">
+      <b>4. เหนื่อยง่ายไม่ค่อยมีแรง</b>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" id="flexRadioDefault4-1" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 4');" required>
+          <label class="form-check-label" for="flexRadioDefault4-1">
+            ไม่มีเลย
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" id="flexRadioDefault4-2" value="1">
+          <label class="form-check-label" for="flexRadioDefault4-2">
+            เป็นบางวัน (1-7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" id="flexRadioDefault4-3" value="2">
+          <label class="form-check-label" for="flexRadioDefault4-3">
+            เป็นบ่อย (มากกว่า 7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q4" id="flexRadioDefault4-4" value="3">
+          <label class="form-check-label" for="flexRadioDefault4-4">
+            เป็นทุกวัน
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card mt-3 mb-3">
+    <div class="card-header">
+      <b>5. เบื่ออาหารหรือกินมากเกินไป</b>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" id="flexRadioDefault5-1" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 5');" required>
+          <label class="form-check-label" for="flexRadioDefault5-1">
+            ไม่มีเลย
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" id="flexRadioDefault5-2" value="1">
+          <label class="form-check-label" for="flexRadioDefault5-2">
+            เป็นบางวัน (1-7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" id="flexRadioDefault5-3" value="2">
+          <label class="form-check-label" for="flexRadioDefault5-3">
+            เป็นบ่อย (มากกว่า 7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q5" id="flexRadioDefault5-4" value="3">
+          <label class="form-check-label" for="flexRadioDefault5-4">
+            เป็นทุกวัน
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="card mt-3 mb-3">
+    <div class="card-header">
+      <b>6. รู้สึกไม่ดีกับตัวเอง คิดว่าตัวเองล้มเหลวหรือครอบครัวผิดหวัง</b>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" id="flexRadioDefault6-1" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 6');" required>
+          <label class="form-check-label" for="flexRadioDefault6-1">
+            ไม่มีเลย
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" id="flexRadioDefault6-2" value="1">
+          <label class="form-check-label" for="flexRadioDefault6-2">
+            เป็นบางวัน (1-7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" id="flexRadioDefault6-3" value="2">
+          <label class="form-check-label" for="flexRadioDefault6-3">
+            เป็นบ่อย (มากกว่า 7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q6" id="flexRadioDefault6-4" value="3">
+          <label class="form-check-label" for="flexRadioDefault6-4">
+            เป็นทุกวัน
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card mt-3 mb-3">
+    <div class="card-header">
+      <b>7. สมาธิไม่ดี เวลาทำอะไร เช่น ดูโทรทัศน์ ฟังวิทยุ หรือทำงานที่ต้องใช้ความตั้งใจ</b>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q7" id="flexRadioDefault7-1" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 7');" required>
+          <label class="form-check-label" for="flexRadioDefault7-1">
+            ไม่มีเลย
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q7" id="flexRadioDefault7-2" value="1">
+          <label class="form-check-label" for="flexRadioDefault7-2">
+            เป็นบางวัน (1-7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q7" id="flexRadioDefault7-3" value="2">
+          <label class="form-check-label" for="flexRadioDefault7-3">
+            เป็นบ่อย (มากกว่า 7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q7" id="flexRadioDefault7-4" value="3">
+          <label class="form-check-label" for="flexRadioDefault7-4">
+            เป็นทุกวัน
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card mt-3 mb-3">
+    <div class="card-header">
+      <b>8. พูดช้า ทำอะไรช้าลงจนคนอื่นสังเกตเห็นได้ หรือกระสับกระส่ายไม่สามารถอยู่นิ่งได้เหมือนที่เคยเป็น</b>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q8" id="flexRadioDefault8-1" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 8');" required>
+          <label class="form-check-label" for="flexRadioDefault8-1">
+            ไม่มีเลย
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q8" id="flexRadioDefault8-2" value="1">
+          <label class="form-check-label" for="flexRadioDefault8-2">
+            เป็นบางวัน (1-7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q8" id="flexRadioDefault8-3" value="2">
+          <label class="form-check-label" for="flexRadioDefault8-3">
+            เป็นบ่อย (มากกว่า 7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q8" id="flexRadioDefault8-4" value="3">
+          <label class="form-check-label" for="flexRadioDefault8-4">
+            เป็นทุกวัน
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card mt-3 mb-3">
+    <div class="card-header">
+      <b>9. คิดทำร้ายตนเอง หรือคิดว่าถ้าตายไปคงจะดี</b>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q9" id="flexRadioDefault9-1" value="0" oninvalid="alert('กรุณาเลือกคำตอบข้อที่ 9');" required>
+          <label class="form-check-label" for="flexRadioDefault9-1">
+            ไม่มีเลย
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q9" id="flexRadioDefault9-2" value="1">
+          <label class="form-check-label" for="flexRadioDefault9-2">
+            เป็นบางวัน (1-7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q9" id="flexRadioDefault9-3" value="2">
+          <label class="form-check-label" for="flexRadioDefault9-3">
+            เป็นบ่อย (มากกว่า 7 วัน)
+          </label>
+        </div>
+      </li>
+      <li class="list-group-item">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="q9" id="flexRadioDefault9-4" value="3">
+          <label class="form-check-label" for="flexRadioDefault9-4">
+            เป็นทุกวัน
+          </label>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="text-center mb-3">
+    <button type="submit" class="btn btn-primary">ส่งคำตอบ</button>
+  </div>
+</form>
+
+<div class="card mb-3">
+  <div class="card-header text-center">
+    แบบคัดกรองโรคซึมเศร้าด้วย 9 คำถาม 9Q
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">• คะแนน < 7 ไม่มีอาการของโรคซึมเศร้าหรือมีอาการของซึมเศร้า ระดับน้อยมาก </li>
+    <li class="list-group-item">• คะแนน 7 - 12 มีอาการของโรคซึมเศร้า ระดับน้อย</li>
+    <li class="list-group-item">• คะแนน 13 - 18 มีอาการของโรคซึมเศร้า ระดับปานกลาง</li>
+    <li class="list-group-item">• คะแนน ≥ 19 มีอาการของโรคซึมเศร้า ระดับรุนแรง</li>
+  </ul>
+</div>
+
+
+{% endblock %}
